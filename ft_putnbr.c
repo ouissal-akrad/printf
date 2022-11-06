@@ -6,28 +6,28 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:17:11 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/03 15:49:08 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:08:00 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(int nb, int *count)
 {
 	if (nb == -2147483648)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
+		ft_putchar('-', count);
+		ft_putchar('2', count);
+		ft_putnbr(147483648, count);
 	}
 	else if (nb < 0)
 	{
-		ft_putchar('-');
+		ft_putchar('-', count);
 		nb = -nb;
-		ft_putnbr(nb);
+		ft_putnbr(nb, count);
 	}
 	else if (nb > 9)
-		ft_putunsigned(nb);
+		ft_putunsigned(nb, count);
 	else
-		ft_putchar(nb + 48);
+		ft_putchar(nb + 48, count);
 }

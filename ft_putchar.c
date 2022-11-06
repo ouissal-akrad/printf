@@ -6,13 +6,14 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:01:59 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/03 11:05:06 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:07:26 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(int c, int *count)
 {
 	write(1, &c, 1);
+	*count += 1;
 }

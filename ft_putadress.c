@@ -6,13 +6,15 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:57:22 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/04 13:18:49 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:37:18 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-void	ft_putadress(unsigned long long nb)
+void	ft_putadress(unsigned long long nb, const char *base, int *count)
 {
-	ft_puthexa(nb);
+	if (nb >= 16)
+		ft_putadress(nb / 16, base, count);
+	ft_putchar(base[nb % 16], count);
 }

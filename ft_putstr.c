@@ -6,19 +6,25 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:05:25 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/03 11:15:54 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:28:58 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str, int *count)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
+	{
+		ft_putstr("(null)", count);
 		return ;
+	}
 	while (str[i])
-		write(1, &str[i++], 1);
+	{
+		ft_putchar(str[i], count);
+		i++;
+	}
 }

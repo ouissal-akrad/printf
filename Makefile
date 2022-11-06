@@ -1,4 +1,4 @@
-NAME = printf.a
+NAME = libftprintf.a 
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -7,11 +7,13 @@ SRC = 	ft_putchar.c\
 		ft_putnbr.c\
 		ft_putunsigned.c\
 		ft_puthexa.c\
-		ft_putadress.c
+		ft_putadress.c\
+		ft_printf.c\
+		ft_format.c
 		
 OBJ = $(SRC:.c=.o)
 
-INCLUDES = printf.h 
+INCLUDES = ft_printf.h 
 
 all: $(NAME)
 
