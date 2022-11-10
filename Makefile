@@ -9,24 +9,34 @@ SRC = 	ft_putchar.c\
 		ft_puthexa.c\
 		ft_putadress.c\
 		ft_printf.c\
-		ft_format.c
-		
-OBJ = $(SRC:.c=.o)
+		ft_format.c\
+		flags_bonus.c\
 
-INCLUDES = ft_printf.h 
+BONUS = space_bonus.c\
+		plus_bonus.c\
+		hashmaj_bonus.c\
+		hashmin_bonus.c
+
+OBJ_M = $(SRC:.c=.o)
+
+OBJ_B = $(BONUS:.c=.o)
+
+INCLUDES = ft_printf.h ft_printf_bonus.h
 
 all: $(NAME)
 
 %.o : %.c $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) 
-	$(AR) rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ_M) $(OBJ_B)
+	$(AR) rcs $(NAME) $(OBJ_M) $(OBJ_B)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ_M) $(OBJ_B) 
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+bonus: all

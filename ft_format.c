@@ -6,7 +6,7 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 12:49:19 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/06 20:37:42 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:51:54 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_format(va_list args, const char *str, int i, int *count)
 {
-	i++;
 	if (str[i] == 'c')
 		ft_putchar(va_arg(args, int), count);
 	if (str[i] == 's')

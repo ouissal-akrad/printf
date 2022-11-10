@@ -6,13 +6,13 @@
 /*   By: ouakrad <ouakrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:55:52 by ouakrad           #+#    #+#             */
-/*   Updated: 2022/11/06 19:51:26 by ouakrad          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:37:28 by ouakrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-void	ft_puthexa(unsigned int nb, char *base, int *count)
+void	ft_puthexa(unsigned int nb, const char *base, int *count)
 {
 	if (nb < 16)
 	{
